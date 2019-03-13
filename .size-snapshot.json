@@ -1,0 +1,50 @@
+{
+  "./dist/react-form.umd.production.js": {
+    "bundled": 419,
+    "minified": 273,
+    "gzipped": 198
+  },
+  "./dist/react-form.umd.development.js": {
+    "bundled": 419,
+    "minified": 273,
+    "gzipped": 198
+  },
+  "./dist/react-form.cjs.production.js": {
+    "bundled": 128,
+    "minified": 108,
+    "gzipped": 117
+  },
+  "./dist/react-form.cjs.development.js": {
+    "bundled": 128,
+    "minified": 108,
+    "gzipped": 117
+  },
+  "dist/react-form.esm.js": {
+    "bundled": 40074,
+    "minified": 22184,
+    "gzipped": 5706,
+    "treeshaked": {
+      "rollup": {
+        "code": 771,
+        "import_statements": 349
+      },
+      "webpack": {
+        "code": 3661
+      }
+    }
+  },
+  "dist/formik.esm.js": {
+    "bundled": 44,
+    "minified": 35,
+    "gzipped": 53,
+    "treeshaked": {
+      "rollup": {
+        "code": 0,
+        "import_statements": 0
+      },
+      "webpack": {
+        "code": 951
+      }
+    }
+  }
+}
