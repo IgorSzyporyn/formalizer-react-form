@@ -1,6 +1,5 @@
 {
   "name": "@formalizer/react-form",
-  "displayName": "react-form",
   "version": "1.0.0",
   "description": "React based form component for formalizer",
   "repository": {

@@ -1,7 +1,7 @@
-'use strict'
+"use strict";
 
-if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./dist/formalization.cjs.production.js')
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./dist/react-form.cjs.production.js");
 } else {
-  module.exports = require('./dist/formalization.cjs.development.js')
+  module.exports = require("./dist/react-form.cjs.development.js");
 }
