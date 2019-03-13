@@ -13,13 +13,13 @@ const buildUmd = ({ env }) => ({
   input,
   external,
   output: {
-    name: "formalizer-react-form",
+    name: "react-form",
     format: "umd",
     sourcemap: true,
     file:
       env === "production"
-        ? `./dist/formalizer-react-form.umd.${env}.js`
-        : `./dist/formalizer-react-form.umd.${env}.js`,
+        ? `./dist/react-form.umd.${env}.js`
+        : `./dist/react-form.umd.${env}.js`,
     exports: "named"
   },
 

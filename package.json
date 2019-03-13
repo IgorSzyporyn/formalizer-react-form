@@ -1,17 +1,18 @@
 {
-  "name": "@formalizer/formalizer-react-form",
+  "name": "@formalizer/react-form",
+  "displayName": "react-form",
   "version": "1.0.0",
   "description": "React based form component for formalizer",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IgorSzyporyn/formalizer-react-form.git"
+    "url": "git+https://github.com/IgorSzyporyn/react-form.git"
   },
   "author": "Igor Szyporyn Jørgensen <igor.szyporyn@gmail.com> (https://twitter.com/IgorSzyporyn)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IgorSzyporyn/formalizer-react-form/issues"
+    "url": "https://github.com/IgorSzyporyn/react-form/issues"
   },
-  "homepage": "https://github.com/IgorSzyporyn/formalizer-react-form#readme",
+  "homepage": "https://github.com/IgorSzyporyn/react-form#readme",
   "engines": {
     "node": ">=8.10.0"
   },
@@ -19,7 +20,7 @@
     "dist"
   ],
   "main": "dist/index.js",
-  "module": "dist/formalizer-react-form.es6.js",
+  "module": "dist/react-form.es6.js",
   "typings": "dist/index.d.ts",
   "size-limit": [
     {
@@ -27,11 +28,11 @@
       "limit": "40.2 kB"
     },
     {
-      "path": "./dist/formalizer-react-form.es6.js",
+      "path": "./dist/react-form.es6.js",
       "limit": "40.2 kB"
     },
     {
-      "path": "./dist/formalizer-react-form.umd.production.js",
+      "path": "./dist/react-form.umd.production.js",
       "limit": "40 kB"
     }
   ],
