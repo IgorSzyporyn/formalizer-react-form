@@ -75,6 +75,7 @@
   },
   "dependencies": {
     "create-react-context": "^0.2.3",
+    "deepmerge": "^3.2.0",
     "lodash": "^4.17.11",
     "lodash-es": "^4.17.11",
     "prop-types": "^15.7.2"

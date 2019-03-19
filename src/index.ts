@@ -1,3 +1,5 @@
-export * from './FormalizerForm'
-export * from './FormalizerField'
+export * from './Form'
+export { default as FormalizerField } from './Field'
+export { default as FormalizerFieldGroup } from './FieldGroup'
+export * from './utils'
 export * from './types'
