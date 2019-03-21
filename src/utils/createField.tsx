@@ -1,9 +1,9 @@
-import { IXFieldRefMap, XFieldProps } from '@formalizer/core'
+import { IXFieldProps, IXFieldRefMap } from '@formalizer/core'
 import React from 'react'
 import { FormFieldProps, IFormFieldExtraProps } from '../types'
 
 export function createField(
-  xField: XFieldProps<IFormFieldExtraProps>,
+  xField: IXFieldProps<IFormFieldExtraProps>,
   xFieldRefMap: IXFieldRefMap<IFormFieldExtraProps>
 ) {
   const { component } = xField.extraProps

@@ -1,9 +1,8 @@
 import {
   Formalizer,
-  IFieldProps,
-  IXFieldMap,
+  IFormalizerOptions,
+  IXFieldProps,
   IXFieldRefMap,
-  XFieldProps,
 } from '@formalizer/core'
 import {
   InputHTMLAttributes,
@@ -18,16 +17,12 @@ export type FormFieldInputProps = InputHTMLAttributes<HTMLInputElement> &
 export interface IFormFieldExtraProps {
   component: React.ReactNode
   inputProps?: FormFieldInputProps
-  touched?: boolean
-  dirty?: boolean
 }
 
 // FORM PROPS
-export interface IFormProps {
+export interface IFormProps extends IFormalizerOptions {
   render?: (props: IFormChildProps) => React.ReactNode
   children?: ((props: IFormChildProps) => React.ReactNode) | React.ReactNode
-  fields?: IFieldProps[]
-  xFieldMap?: Array<IXFieldMap<IFormFieldExtraProps>>
 }
 
 // FORM CHILDREN RENDER/COMPONENT PROPS
@@ -36,15 +31,15 @@ export interface IFormChildProps<E = IFormFieldExtraProps> {
 }
 
 // FIELD PROPS
-export type FormFieldProps<E = IFormFieldExtraProps> = XFieldProps<E> & {
-  xField: XFieldProps<E>
+export type FormFieldProps<E = IFormFieldExtraProps> = IXFieldProps<E> & {
+  xField: IXFieldProps<E>
   xFieldRefMap: IXFieldRefMap<E>
   render?: (props: FormFieldChildProps) => React.ReactNode
   children?: ((props: FormFieldChildProps) => React.ReactNode) | React.ReactNode
 }
 
 // FIELD STATE
-export type FormFieldState<E = IFormFieldExtraProps> = XFieldProps<E> &
+export type FormFieldState<E = IFormFieldExtraProps> = IXFieldProps<E> &
   Pick<
     FormFieldProps,
     Exclude<
@@ -58,17 +53,17 @@ export type FormFieldHandleChange = (e: React.ChangeEvent<any> | any) => void
 export type FormFieldHandleBlur = (e: React.FocusEvent<any>) => void
 
 // FIELD CHILDREN RENDER/COMPONENT PROPS
-export type FormFieldChildProps<E = IFormFieldExtraProps> = XFieldProps<E> & {
-  xField: XFieldProps<E>
+export type FormFieldChildProps<E = IFormFieldExtraProps> = IXFieldProps<E> & {
+  xField: IXFieldProps<E>
   xFieldRefMap: IXFieldRefMap<E>
   handleChange?: FormFieldHandleChange
   handleBlur?: FormFieldHandleBlur
 }
 
 // FIELD GROUP CHILDREN RENDER/COMPONENT PROPS
-export type FormFieldGroupChildProps<E = IFormFieldExtraProps> = XFieldProps<
+export type FormFieldGroupChildProps<E = IFormFieldExtraProps> = IXFieldProps<
   E
 > & {
-  xField: XFieldProps<E>
+  xField: IXFieldProps<E>
   xFieldRefMap: IXFieldRefMap<E>
 }

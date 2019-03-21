@@ -1,10 +1,10 @@
-import { IXFieldRefMap, XFieldProps } from '@formalizer/core'
+import { IXFieldProps, IXFieldRefMap } from '@formalizer/core'
 import React from 'react'
 import { IFormFieldExtraProps } from '../types'
 import { createField } from './createField'
 
 export function createFields(
-  xFields: Array<XFieldProps<IFormFieldExtraProps>>,
+  xFields: Array<IXFieldProps<IFormFieldExtraProps>>,
   xFieldRefMap: IXFieldRefMap<IFormFieldExtraProps>
 ) {
   // tslint:disable jsx-no-multiline-js

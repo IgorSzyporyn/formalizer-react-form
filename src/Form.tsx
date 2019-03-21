@@ -5,24 +5,27 @@ import { IFormChildProps, IFormFieldExtraProps, IFormProps } from './types'
 import { createFields } from './utils'
 
 export class FormalizerForm extends React.Component<IFormProps, {}> {
-  public formalizr: Formalizer<IFormFieldExtraProps>
+  public static displayName = 'FormalizerForm'
+  public static defaultProps = {}
+
+  public formalizer: Formalizer<IFormFieldExtraProps>
 
   constructor(props: IFormProps) {
     super(props)
 
-    this.formalizr = this.initFormalizer(props)
+    this.formalizer = this.initFormalizer(props)
   }
 
   public render() {
-    const { xFields, xFieldRefMap } = this.formalizr
+    const { xFields, xFieldRefMap } = this.formalizer
     const { children, render } = this.props
 
     const formChildProps: IFormChildProps = {
-      formalizer: this.formalizr,
+      formalizer: this.formalizer,
     }
 
     const a: any = window
-    a.A = this.formalizr
+    a.A = this.formalizer
 
     // tslint:disable jsx-no-multiline-js
     return (
@@ -46,7 +49,7 @@ export class FormalizerForm extends React.Component<IFormProps, {}> {
   }
 
   private initFormalizer = (props: IFormProps) => {
-    return new Formalizer({
+    return new Formalizer<IFormFieldExtraProps>({
       fields: props.fields,
       xFieldMap: props.xFieldMap,
     })

@@ -13,6 +13,9 @@ type Props = FormFieldProps
 type State = FormFieldState
 
 class FormalizerFieldGroup extends React.Component<Props, State> {
+  public static displayName = 'FormalizerFieldGroup'
+  public static defaultProps = {}
+
   constructor(props: FormFieldProps) {
     super(props)
 
