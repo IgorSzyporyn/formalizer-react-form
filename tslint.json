@@ -1,12 +1,23 @@
 {
+  "extends": ["tslint:latest", "tslint-config-prettier", "tslint-react"],
   "defaultSeverity": "error",
-  "extends": ["dtslint/dtslint.json"],
-  "jsRules": {},
   "rules": {
     "deprecation": true,
-    "file-name-casing": false,
+    "semicolon": [true, "never"],
     "no-unnecessary-callback-wrapper": false,
     "no-unnecessary-generics": false,
-    "semicolon": [true, "always", "ignore-bound-class-methods"]
+    "no-this-assignment": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-last"
+      }
+    ],
+    "max-line-length": [
+      true,
+      { "limit": 80, "ignore-pattern": "^import |^export {(.*?)}" }
+    ]
   }
 }

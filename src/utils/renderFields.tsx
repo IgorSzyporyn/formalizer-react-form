@@ -1,12 +1,13 @@
+import { IXFieldRefMap, XFieldProps } from '@formalizer/core'
 import React from 'react'
-import { XFieldProps, XFieldRefMap } from '@formalizer/core'
-import { FormFieldExtraProps } from '../types'
+import { IFormFieldExtraProps } from '../types'
 import { renderField } from './renderField'
 
 export function renderFields(
-  xFields: XFieldProps<FormFieldExtraProps>[],
-  xFieldRefMap: XFieldRefMap<FormFieldExtraProps>
+  xFields: Array<XFieldProps<IFormFieldExtraProps>>,
+  xFieldRefMap: IXFieldRefMap<IFormFieldExtraProps>
 ) {
+  // tslint:disable jsx-no-multiline-js
   return (
     <React.Fragment>
       {xFields

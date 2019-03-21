@@ -1,21 +1,18 @@
+import { XFieldListenerCallback } from '@formalizer/core'
+import { isFunction } from 'lodash'
 import React from 'react'
 import {
-  FormFieldState,
-  FormFieldProps,
-  FormFieldExtraProps,
   FormFieldGroupChildProps,
+  FormFieldProps,
+  FormFieldState,
+  IFormFieldExtraProps,
 } from './types'
-import { XFieldListenerCallback } from '@formalizer/core'
-import isFunction from 'lodash/isFunction'
 
-type ExtraProps = FormFieldExtraProps
+type ExtraProps = IFormFieldExtraProps
 type Props = FormFieldProps
 type State = FormFieldState
 
 class FormalizerFieldGroup extends React.Component<Props, State> {
-  static displayName = 'FormalizerFieldGroup'
-  static defaultProps = {}
-
   constructor(props: FormFieldProps) {
     super(props)
 
@@ -23,10 +20,12 @@ class FormalizerFieldGroup extends React.Component<Props, State> {
       ...props,
     }
 
-    props.addListener && props.addListener(this.handleXFieldChange)
+    if (props.addListener) {
+      props.addListener(this.handleXFieldChange)
+    }
   }
 
-  render() {
+  public render() {
     const { props, state } = this
     const { render, children, xField, xFieldRefMap } = props
 
@@ -36,6 +35,7 @@ class FormalizerFieldGroup extends React.Component<Props, State> {
       xFieldRefMap,
     }
 
+    // tslint:disable jsx-no-multiline-js
     return (
       <React.Fragment>
         {render

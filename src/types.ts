@@ -1,21 +1,21 @@
 import {
-  FieldProps,
+  Formalizer,
+  IFieldProps,
+  IXFieldMap,
+  IXFieldRefMap,
   XFieldProps,
-  XFieldMap,
-  XFieldRefMap,
-  formalizer,
 } from '@formalizer/core'
 import {
   InputHTMLAttributes,
-  TextareaHTMLAttributes,
   SelectHTMLAttributes,
+  TextareaHTMLAttributes,
 } from 'react'
 
 export type FormFieldInputProps = InputHTMLAttributes<HTMLInputElement> &
   TextareaHTMLAttributes<HTMLTextAreaElement> &
   SelectHTMLAttributes<HTMLSelectElement>
 
-export interface FormFieldExtraProps {
+export interface IFormFieldExtraProps {
   component: React.ReactNode
   inputProps?: FormFieldInputProps
   touched?: boolean
@@ -23,28 +23,28 @@ export interface FormFieldExtraProps {
 }
 
 // FORM PROPS
-export interface FormProps {
-  render?: (props: FormChildProps) => React.ReactNode
-  children?: ((props: FormChildProps) => React.ReactNode) | React.ReactNode
-  fields?: FieldProps[]
-  xFieldMap?: XFieldMap<FormFieldExtraProps>[]
+export interface IFormProps {
+  render?: (props: IFormChildProps) => React.ReactNode
+  children?: ((props: IFormChildProps) => React.ReactNode) | React.ReactNode
+  fields?: IFieldProps[]
+  xFieldMap?: Array<IXFieldMap<IFormFieldExtraProps>>
 }
 
 // FORM CHILDREN RENDER/COMPONENT PROPS
-export type FormChildProps<E = FormFieldExtraProps> = {
-  formalizer: formalizer<E>
+export interface IFormChildProps<E = IFormFieldExtraProps> {
+  formalizer: Formalizer<E>
 }
 
 // FIELD PROPS
-export type FormFieldProps<E = FormFieldExtraProps> = XFieldProps<E> & {
+export type FormFieldProps<E = IFormFieldExtraProps> = XFieldProps<E> & {
   xField: XFieldProps<E>
-  xFieldRefMap: XFieldRefMap<E>
+  xFieldRefMap: IXFieldRefMap<E>
   render?: (props: FormFieldChildProps) => React.ReactNode
   children?: ((props: FormFieldChildProps) => React.ReactNode) | React.ReactNode
 }
 
 // FIELD STATE
-export type FormFieldState<E = FormFieldExtraProps> = XFieldProps<E> &
+export type FormFieldState<E = IFormFieldExtraProps> = XFieldProps<E> &
   Pick<
     FormFieldProps,
     Exclude<
@@ -58,17 +58,17 @@ export type FormFieldHandleChange = (e: React.ChangeEvent<any> | any) => void
 export type FormFieldHandleBlur = (e: React.FocusEvent<any>) => void
 
 // FIELD CHILDREN RENDER/COMPONENT PROPS
-export type FormFieldChildProps<E = FormFieldExtraProps> = XFieldProps<E> & {
+export type FormFieldChildProps<E = IFormFieldExtraProps> = XFieldProps<E> & {
   xField: XFieldProps<E>
-  xFieldRefMap: XFieldRefMap<E>
+  xFieldRefMap: IXFieldRefMap<E>
   handleChange?: FormFieldHandleChange
   handleBlur?: FormFieldHandleBlur
 }
 
 // FIELD GROUP CHILDREN RENDER/COMPONENT PROPS
-export type FormFieldGroupChildProps<E = FormFieldExtraProps> = XFieldProps<
+export type FormFieldGroupChildProps<E = IFormFieldExtraProps> = XFieldProps<
   E
 > & {
   xField: XFieldProps<E>
-  xFieldRefMap: XFieldRefMap<E>
+  xFieldRefMap: IXFieldRefMap<E>
 }

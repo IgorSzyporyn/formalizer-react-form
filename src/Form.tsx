@@ -1,39 +1,30 @@
-import * as React from 'react'
-import { formalizer } from '@formalizer/core'
-import isFunction from 'lodash/isFunction'
+import { Formalizer } from '@formalizer/core'
+import { isFunction } from 'lodash'
+import React from 'react'
+import { IFormChildProps, IFormFieldExtraProps, IFormProps } from './types'
 import { renderFields } from './utils'
-import { FormProps, FormFieldExtraProps, FormChildProps } from './types'
 
-export class FormalizerForm extends React.Component<FormProps, {}> {
-  static displayName = 'FormalizerForm'
-  static defaultProps = {}
+export class FormalizerForm extends React.Component<IFormProps, {}> {
+  public formalizr: Formalizer<IFormFieldExtraProps>
 
-  public formalizr: formalizer<FormFieldExtraProps>
-
-  constructor(props: FormProps) {
+  constructor(props: IFormProps) {
     super(props)
 
     this.formalizr = this.initFormalizer(props)
   }
 
-  private initFormalizer = (props: FormProps) => {
-    return new formalizer({
-      fields: props.fields,
-      xFieldMap: props.xFieldMap,
-    })
-  }
-
-  render() {
+  public render() {
     const { xFields, xFieldRefMap } = this.formalizr
     const { children, render } = this.props
 
-    const formChildProps: FormChildProps = {
+    const formChildProps: IFormChildProps = {
       formalizer: this.formalizr,
     }
 
     const a: any = window
     a.A = this.formalizr
 
+    // tslint:disable jsx-no-multiline-js
     return (
       <form>
         <section>{renderFields(xFields, xFieldRefMap)}</section>
@@ -42,8 +33,8 @@ export class FormalizerForm extends React.Component<FormProps, {}> {
             ? render(formChildProps)
             : children
             ? isFunction(children)
-              ? (children as ((props: FormChildProps) => React.ReactNode))(
-                  formChildProps as FormChildProps
+              ? (children as ((props: IFormChildProps) => React.ReactNode))(
+                  formChildProps as IFormChildProps
                 )
               : !(React.Children.count(children) === 0)
               ? React.Children.only(children)
@@ -52,5 +43,12 @@ export class FormalizerForm extends React.Component<FormProps, {}> {
         </section>
       </form>
     )
+  }
+
+  private initFormalizer = (props: IFormProps) => {
+    return new Formalizer({
+      fields: props.fields,
+      xFieldMap: props.xFieldMap,
+    })
   }
 }

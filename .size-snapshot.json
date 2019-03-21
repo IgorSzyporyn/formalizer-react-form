@@ -1,13 +1,13 @@
 {
   "./dist/react-form.umd.production.js": {
-    "bundled": 607427,
-    "minified": 94109,
-    "gzipped": 31560
+    "bundled": 607545,
+    "minified": 94128,
+    "gzipped": 31580
   },
   "./dist/react-form.umd.development.js": {
-    "bundled": 607427,
-    "minified": 94109,
-    "gzipped": 31560
+    "bundled": 607545,
+    "minified": 94128,
+    "gzipped": 31580
   },
   "./dist/react-form.cjs.production.js": {
     "bundled": 6575,
