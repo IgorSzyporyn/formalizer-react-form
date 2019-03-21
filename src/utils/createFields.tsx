@@ -1,9 +1,9 @@
 import { IXFieldRefMap, XFieldProps } from '@formalizer/core'
 import React from 'react'
 import { IFormFieldExtraProps } from '../types'
-import { renderField } from './renderField'
+import { createField } from './createField'
 
-export function renderFields(
+export function createFields(
   xFields: Array<XFieldProps<IFormFieldExtraProps>>,
   xFieldRefMap: IXFieldRefMap<IFormFieldExtraProps>
 ) {
@@ -12,7 +12,7 @@ export function renderFields(
     <React.Fragment>
       {xFields
         .filter(f => f.extraProps && f.extraProps.component)
-        .map(xField => renderField(xField, xFieldRefMap))}
+        .map(xField => createField(xField, xFieldRefMap))}
     </React.Fragment>
   )
 }

@@ -1,35 +1,35 @@
 {
   "./dist/react-form.umd.production.js": {
-    "bundled": 607545,
-    "minified": 94128,
-    "gzipped": 31580
+    "bundled": 1186099,
+    "minified": 176529,
+    "gzipped": 59381
   },
   "./dist/react-form.umd.development.js": {
-    "bundled": 607545,
-    "minified": 94128,
-    "gzipped": 31580
+    "bundled": 1186099,
+    "minified": 176529,
+    "gzipped": 59381
   },
   "./dist/react-form.cjs.production.js": {
-    "bundled": 6575,
-    "minified": 3384,
-    "gzipped": 987
+    "bundled": 6006,
+    "minified": 3131,
+    "gzipped": 943
   },
   "./dist/react-form.cjs.development.js": {
-    "bundled": 6575,
-    "minified": 3384,
-    "gzipped": 987
+    "bundled": 6006,
+    "minified": 3131,
+    "gzipped": 943
   },
   "dist/react-form.esm.js": {
-    "bundled": 5326,
-    "minified": 3006,
-    "gzipped": 870,
+    "bundled": 5022,
+    "minified": 2767,
+    "gzipped": 834,
     "treeshaked": {
       "rollup": {
-        "code": 154,
-        "import_statements": 130
+        "code": 464,
+        "import_statements": 154
       },
       "webpack": {
-        "code": 1532
+        "code": 1514
       }
     }
   }

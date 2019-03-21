@@ -2,7 +2,7 @@ import { Formalizer } from '@formalizer/core'
 import { isFunction } from 'lodash'
 import React from 'react'
 import { IFormChildProps, IFormFieldExtraProps, IFormProps } from './types'
-import { renderFields } from './utils'
+import { createFields } from './utils'
 
 export class FormalizerForm extends React.Component<IFormProps, {}> {
   public formalizr: Formalizer<IFormFieldExtraProps>
@@ -27,7 +27,7 @@ export class FormalizerForm extends React.Component<IFormProps, {}> {
     // tslint:disable jsx-no-multiline-js
     return (
       <form>
-        <section>{renderFields(xFields, xFieldRefMap)}</section>
+        <section>{createFields(xFields, xFieldRefMap)}</section>
         <section>
           {render
             ? render(formChildProps)

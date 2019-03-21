@@ -2,7 +2,7 @@ import { IXFieldRefMap, XFieldProps } from '@formalizer/core'
 import React from 'react'
 import { FormFieldProps, IFormFieldExtraProps } from '../types'
 
-export function renderField(
+export function createField(
   xField: XFieldProps<IFormFieldExtraProps>,
   xFieldRefMap: IXFieldRefMap<IFormFieldExtraProps>
 ) {
