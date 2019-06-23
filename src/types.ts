@@ -34,7 +34,7 @@ export interface IFormChildProps<E = IFormFieldExtraProps> {
 export type FormFieldProps<E = IFormFieldExtraProps> = IXFieldProps<E> & {
   xField: IXFieldProps<E>
   xFieldRefMap: IXFieldRefMap<E>
-  render?: (props: FormFieldChildProps) => React.ReactNode
+  render?: (props: FormFieldChildProps) => React.ReactNode | JSX.Element
   children?: ((props: FormFieldChildProps) => React.ReactNode) | React.ReactNode
 }
 

@@ -15,6 +15,7 @@ const replacements = [{ original: 'lodash', replacement: 'lodash-es' }]
 const babelOptions = {
   exclude: ['node_modules/**', '**/*.json'],
   plugins: [
+    'emotion',
     'annotate-pure-calls',
     'dev-expression',
     ['transform-rename-import', { replacements }],
