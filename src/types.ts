@@ -20,7 +20,7 @@ export interface IFormFieldExtraProps {
 }
 
 // FORM PROPS
-export interface IFormProps extends IFormalizerOptions {
+export interface IFormProps<E> extends IFormalizerOptions<E> {
   render?: (props: IFormChildProps) => React.ReactNode
   children?: ((props: IFormChildProps) => React.ReactNode) | React.ReactNode
 }
