@@ -4,16 +4,15 @@ import React from 'react'
 import { IFormChildProps, IFormFieldExtraProps, IFormProps } from './types'
 import { createFields } from './utils'
 
-export class FormalizerForm extends React.Component<
-  IFormProps<IFormFieldExtraProps>,
-  {}
-> {
+type Props = IFormProps<IFormFieldExtraProps>
+
+export class FormalizerForm extends React.Component<Props, {}> {
   public static displayName = 'FormalizerForm'
   public static defaultProps = {}
 
   public formalizer: Formalizer<IFormFieldExtraProps>
 
-  constructor(props: IFormProps<IFormFieldExtraProps>) {
+  constructor(props: Props) {
     super(props)
 
     this.formalizer = this.initFormalizer(props)
@@ -26,9 +25,6 @@ export class FormalizerForm extends React.Component<
     const formChildProps: IFormChildProps = {
       formalizer: this.formalizer,
     }
-
-    const a: any = window
-    a.A = this.formalizer
 
     // tslint:disable jsx-no-multiline-js
     return (
@@ -51,10 +47,9 @@ export class FormalizerForm extends React.Component<
     )
   }
 
-  private initFormalizer = (props: IFormProps<IFormFieldExtraProps>) => {
-    return new Formalizer<IFormFieldExtraProps>({
+  private initFormalizer = (props: Props) =>
+    new Formalizer<IFormFieldExtraProps>({
       fields: props.fields,
       xFieldMap: props.xFieldMap,
     })
-  }
 }

@@ -58,7 +58,7 @@ class FormalizerField extends React.Component<Props, State> {
       childProps.extraProps.inputProps = {
         ...childProps.extraProps.inputProps,
         name: state.$id,
-        value: (state.value || '') as string,
+        value: state.value !== undefined ? (state.value as string) : '',
         onChange: handleChange,
         onBlur: handleBlur,
       }
